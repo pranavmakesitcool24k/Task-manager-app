@@ -1,6 +1,5 @@
 import { useState, createContext, useCallback, useContext } from "react";
 
-// Custom Hook
 export const useLocalStorage = (key, initialValue) => {
   const [storedValue, setStoredValue] = useState(() => {
     try {
@@ -29,7 +28,6 @@ export const useLocalStorage = (key, initialValue) => {
   return [storedValue, setValue];
 };
 
-// Context
 export const TaskContext = createContext();
 
 export const TaskProvider = ({ children }) => {
