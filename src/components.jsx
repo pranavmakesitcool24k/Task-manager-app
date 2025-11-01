@@ -9,7 +9,6 @@ import {
 } from "react";
 import { TaskContext, useLocalStorage } from "./context.jsx";
 
-// Theme Toggle
 export const ThemeToggle = () => {
   const [theme, setTheme] = useLocalStorage("theme", "light");
 
@@ -33,7 +32,6 @@ export const ThemeToggle = () => {
   );
 };
 
-// Header
 export const Header = () => (
   <header>
     <div className="header-content">
@@ -43,7 +41,6 @@ export const Header = () => (
   </header>
 );
 
-// Task Input
 export const TaskInput = () => {
   const [input, setInput] = useState("");
   const [error, setError] = useState("");
@@ -94,7 +91,6 @@ export const TaskInput = () => {
   );
 };
 
-// Filter Buttons
 export const FilterButtons = () => {
   const { filter, setFilter, tasks } = useContext(TaskContext);
   const filters = ["All", "Active", "Completed"];
@@ -123,7 +119,6 @@ export const FilterButtons = () => {
   );
 };
 
-// Task Item
 export const TaskItem = memo(
   ({ task, index, onToggle, onDelete, onDragStart, onDragOver, onDrop }) => {
     const [isRemoving, setIsRemoving] = useState(false);
@@ -161,7 +156,6 @@ export const TaskItem = memo(
 
 TaskItem.displayName = "TaskItem";
 
-// Task List
 export const TaskList = () => {
   const { tasks, filter, toggleTask, deleteTask, reorderTasks } =
     useContext(TaskContext);
@@ -221,7 +215,6 @@ export const TaskList = () => {
   );
 };
 
-// Stats Bar
 export const StatsBar = () => {
   const { tasks, clearCompleted } = useContext(TaskContext);
 
